@@ -59,9 +59,7 @@ const MenuCircle = function({show, coords, page, index}) {
   useEffect(()=>{}, [style]);
 
   return (
-    <div ref={el} className='menuItem circle grow anchor' style={{...style, width: width, margin: `${-width/2}px`}} onClick={()=>{st.setPage(page)}}>
-      <div className='circle shine float'/>
-    </div>
+    <div ref={el} className='menuItem circle grow anchor' style={{...style, width: width, margin: `${-width/2}px`}} onClick={()=>{st.setPage(page)}}/>
   );
 };
 
