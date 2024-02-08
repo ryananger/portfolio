@@ -25,6 +25,8 @@ const App = function() {
     var rendered = [];
     var num = window.innerWidth >= 1100 ? 150 : 50;
 
+    console.log(num);
+
     for (var i = 0; i < num; i++) {
       var min = 1;
       var max = helpers.rand(6) + min + min;
