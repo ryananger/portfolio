@@ -23,8 +23,9 @@ const App = function() {
 
   var renderStars = function() {
     var rendered = [];
+    var num = window.innerWidth >= 1100 ? 150 : 50;
 
-    for (var i = 0; i < 250; i++) {
+    for (var i = 0; i < num; i++) {
       var min = 1;
       var max = helpers.rand(6) + min + min;
 
