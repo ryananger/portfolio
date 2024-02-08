@@ -1,0 +1,16 @@
+.beat {
+  animation: 1s cubic-bezier(0.22, 0.32, 0.25, 1) 0s infinite beat;
+}
+
+.grow {
+  transition: transform 0.25s;
+}
+
+.grow:hover {
+  transform: scale(1.6, 1.6);
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1, 1); }
+  50% { transform: scale(0.95, 0.95); }
+}
