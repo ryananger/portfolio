@@ -18,7 +18,7 @@ const MenuCircle = function({show, coords, page, index}) {
   const range = 100;
 
   var mount = function() {
-    var colors = ['#ffae97', '#ffcf97', '#fff197', '#addfd1'];
+    var colors = ['#ffae97', '#ffcf97', '#97ffce', '#addfd1'];
 
     let style = {
       position: 'fixed',
@@ -59,7 +59,9 @@ const MenuCircle = function({show, coords, page, index}) {
   useEffect(()=>{}, [style]);
 
   return (
-    <div ref={el} className='menuItem circle grow' style={{...style, width: width, margin: `${-width/2}px`}} onClick={()=>{st.setPage(page)}}/>
+    <div ref={el} className='menuItem circle grow anchor' style={{...style, width: width, margin: `${-width/2}px`}} onClick={()=>{st.setPage(page)}}>
+      <div className='circle shine float'/>
+    </div>
   );
 };
 

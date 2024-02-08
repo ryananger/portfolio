@@ -3,6 +3,13 @@
   border-radius: 100%;
 }
 
+.stars {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+
 .home {
   cursor: pointer;
   background: var(--grad);
@@ -70,12 +77,12 @@
   padding: 1vh;
   padding-bottom: 4px;
   width: 100%;
-  height: 36px;
+  height: 33px;
   justify-content: space-between;
   border-bottom: 4px solid;
   position: relative;
   font-size: 14px;
-  text-align: end;
+  align-items: center;
 }
 
 .headLine {
@@ -92,7 +99,7 @@
   border-radius: 12px;
   background-color: var(--bg);
   cursor: pointer;
-  margin-top: 0px;
+  margin-top: -4px;
   margin-right: 0px;
   transition: width 0.1s, border-radius 0.1s, margin-top 0.1s, margin-right 0.1s;
 }
@@ -164,4 +171,11 @@
   z-index: 1;
   border-radius: 4px;
   padding: 4vh;
+}
+
+.shine {
+  background: #ffffff47;
+  width: 60%;
+  right: 10%;
+  top: 7%;
 }
