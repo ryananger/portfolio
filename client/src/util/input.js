@@ -17,15 +17,45 @@ window.addEventListener('mousemove', function(e) {
   mouse.over = element ? element : null;
 }, {passive: true});
 
-window.addEventListener('keypress', function(e) {
+var throttle;
+
+var throttleKey = function() {
+  var now = Date.now();
+  var chk;
+
+  if (throttle && now - throttle < 100) {
+    chk = true;
+  } else {
+    chk = false;
+  }
+
+  throttle = Date.now();
+  return chk;
+}
+
+window.addEventListener('keyup', function(e) {
   if (e.target.type === 'text') {return};
+
+  if (throttleKey()) {
+    return;
+  }
 
   switch (e.key) {
     case 'f':
       helpers.alert('Someone pressed F.');
       break;
     case 'm':
-      console.log(mouse);
+
+      st.setShowMenu(!st.showMenu);
+      break;
+    case 'r':
+      st.setRotate(!st.rotate);
+      break;
+    case '1':
+    case '2':
+    case '3':
+      st.setPage(['info', 'projects', 'contact'][e.key - 1]);
+      st.setShowMenu(true);
       break;
   }
 });

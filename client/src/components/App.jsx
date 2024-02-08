@@ -11,7 +11,8 @@ import Circle from './Circle.jsx';
 import MenuCircle from './MenuCircle.jsx';
 
 const App = function() {
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = st.newState('showMenu', useState(false));
+  const [rotate, setRotate] = st.newState('rotate', useState(false));
   const [page, setPage] = st.newState('page', useState(null));
   const center = {x: window.innerWidth/2, y: window.innerHeight/2};
 
@@ -37,7 +38,9 @@ const App = function() {
   };
 
   useEffect(()=>{
-    setPage(null);
+    if (!showMenu) {
+      setPage(null);
+    }
   }, [showMenu]);
 
   if (window.innerWidth < 1100) {
@@ -56,7 +59,7 @@ const App = function() {
       <Stars />
       {renderMenu()}
 
-      <Circle id='homeCircle' tag='home beat' show={showMenu} min={60} max={200} onClick={()=>{setShowMenu(!showMenu)}}/>
+      <Circle id='homeCircle' tag='home beat' min={60} max={200}/>
       <Page setShowMenu={setShowMenu} content={pages[page]}/>
     </div>
   );

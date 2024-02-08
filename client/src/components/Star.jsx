@@ -40,16 +40,20 @@ const Star = function({min = 12, max = 150, range = 300}) {
   };
 
   var moveStar = function() {
-    if (baseVel.current > 10) {
-      if (Number(st.page)) {
-        baseVel.current *= 0.99;
-      } else {
-        baseVel.current *= 0.95;
+    if (st.rotate) {
+      baseVel.current = 500;
+    } else {
+      if (baseVel.current > 10) {
+        if (Number(st.page)) {
+          baseVel.current *= 0.99;
+        } else {
+          baseVel.current *= 0.95;
+        }
       }
-    }
 
-    if (baseVel.current < 10.5) {
-      baseVel.current = 10;
+      if (baseVel.current < 10.5) {
+        baseVel.current = 10;
+      }
     }
 
     var dir = pos.current.y < window.innerHeight/2 ? -baseVel.current : baseVel.current;
