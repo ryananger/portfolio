@@ -34,13 +34,13 @@ const Info = function() {
       <div className='h f'>
         <div className='infoMain'>
           RYAN ANGER, 34<br/>
-          MiCHIGAN, USA, earth.42i8<br/>
+          MiCHIGAN, USA, EARTH.4_08<br/>
           SOFTWARE ENGINEER (MERN)<br/>
           <br/>
-          FUTURIST<br/>
-          MUSICIAN<br/>
-          ILLUSTRATOR<br/>
-          USAF AIR TRAFFIC CONTROLLER<br/>
+          FUTUrIST<br/>
+          MuSICIAN<br/>
+          ILLUsTRATOR<br/>
+          USAF AIR TRAFFIC CONtROLLER<br/>
         </div>
         <div className='infoSkills v'>
           {renderBars()}

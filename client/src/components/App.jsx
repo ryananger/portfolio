@@ -6,6 +6,7 @@ import {ax, helpers} from 'util';
 
 import Page from './Page.jsx';
 import Info from './Info.jsx';
+import Projects from './Projects.jsx';
 import Stars from './Stars.jsx';
 import Circle from './Circle.jsx';
 import MenuCircle from './MenuCircle.jsx';
@@ -18,7 +19,7 @@ const App = function() {
 
   var pages = {
     info: <Info/>,
-    projects: 'SECRET mETRONOME FIGHT',
+    projects: <Projects/>,
     contact: 'WORK IN PRoGRESS'
   };
 

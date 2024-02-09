@@ -49,7 +49,7 @@
 
   --bg: #201719;
 
-  --grad: linear-gradient(28deg, #ff6e43a1, transparent 10%, #ffdb7771);
+  --grad: linear-gradient(28deg, #ff6f4359, transparent 10%, #ffdb7771);
 }
 
 html {
@@ -111,7 +111,7 @@ h1, h2, h3, h4, h5 {
   width: 100%;
 }
 
-.h {
+.ht {
   height: 100%;
 }
 

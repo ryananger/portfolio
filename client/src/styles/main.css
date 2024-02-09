@@ -42,14 +42,13 @@
 
 .page {
   position: relative;
-  background: var(--grad);
-  background-color: var(--color1);
+  background: linear-gradient(45deg, transparent, #ffd67d69);
+  background-color: #fdb468;
   width: 540px;
   height: 360px;
   border-radius: 8px;
   box-sizing: border-box;
   justify-content: flex-start;
-
   transition: width 0.25s, height 0.25s, border-radius 0.25s, color 0.25s;
   pointer-events: all;
   overflow: hidden;
@@ -113,8 +112,7 @@
 
 .pageContent {
   width: 100%;
-  height: 320px;
-  padding: 1vh;
+  height: 316px;
   transition: opacity 1s;
   font-size: 16px;
   font-weight: 400;
@@ -124,12 +122,13 @@
   position: absolute;
   font-size: 14px;
   bottom: 0;
-  right: 6px;
+  right: 10px;
 }
 
 .info {
   width: 100%;
   height: 100%;
+  padding: 1vh;
 }
 
 .infoMain {
@@ -151,11 +150,11 @@
 }
 
 #asimov {
-  width: calc(100% - 3vh);
+  width: 100%;
   text-align: center;
   padding: 1.5vh;
+  box-sizing: border-box;
   border: 1px solid;
-  margin-bottom: 12px;
   font-weight: 600;
   font-size: 14px;
 }
@@ -178,4 +177,82 @@
   width: 60%;
   right: 10%;
   top: 7%;
+}
+
+.projects {
+  flex-wrap: wrap;
+  padding: 1vh;
+}
+
+.projectsRow {
+  height: calc(50% - 0.5vh);
+  width: 100%;
+}
+
+.project {
+  height: 100%;
+  width: calc(50% - 0.5vh);
+  box-sizing: border-box;
+  border: 1px solid var(--bg);
+  justify-content: space-between;
+  text-align: center;
+  overflow: hidden;
+}
+
+.project:hover {
+  cursor: pointer;
+}
+
+.projectTitle,
+.projectCard {
+  height: 100%;
+  flex: none;
+}
+
+.projectCard {
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+}
+
+.projectCardHead {
+  height: 4px;
+  width: 100%;
+  border-bottom: 1px solid;
+  box-sizing: border-box;
+  margin-bottom: 4px;
+  justify-content: flex-end;
+}
+
+.top {
+  margin-bottom: 0.5vh;
+}
+
+.bottom {
+  margin-top: 0.5vh;
+}
+
+.projectInfo {
+  width: 100%;
+}
+
+.projectText {
+  padding: 6px;
+}
+
+.openButton {
+  position: absolute;
+  bottom: 42px;
+  font-size: 14px;
+}
+
+.badges {
+  width: 100%;
+  border-top: 1px solid;
+  justify-content: space-around;
+}
+
+.badge {
+  flex: auto;
+  text-align: center;
 }

@@ -7,7 +7,7 @@ import {ax, helpers} from 'util';
 
 import RandomString from './RandomString.jsx';
 
-const Page = function({setShowMenu, content}) {
+const Page = function({content}) {
   const [showContent, setShowContent] = useState(false);
   const page = st.page;
   const style = {
@@ -17,8 +17,8 @@ const Page = function({setShowMenu, content}) {
 
   const headings = {
     info: '..HMSP.RA31415.24.info',
-    projects: 'SECRET mETRONOME FIGHT',
-    contact: 'AFTEr PACK COMBO'
+    projects: '..HMSP.RA31415.24.projects',
+    contact: '..HMSP.RA31415.24.contact'
   };
 
   var renderHeadLines = function() {
@@ -50,7 +50,7 @@ const Page = function({setShowMenu, content}) {
           <div className='pageHead h'>
             <h4>{headings[page]}</h4>
             {renderHeadLines()}
-            <div className='closeIcon' onClick={()=>{setShowMenu(false)}}/>
+            <div className='closeIcon' onClick={()=>{st.setShowMenu(false)}}/>
           </div>
           <div className='pageContent v' style={style}>
             {content}

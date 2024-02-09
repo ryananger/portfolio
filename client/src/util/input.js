@@ -42,10 +42,8 @@ window.addEventListener('keyup', function(e) {
 
   switch (e.key) {
     case 'f':
-      helpers.alert('Someone pressed F.');
       break;
     case 'm':
-
       st.setShowMenu(!st.showMenu);
       break;
     case 'r':
