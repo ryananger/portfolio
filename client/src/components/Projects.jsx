@@ -42,7 +42,7 @@ const Projects = function() {
 const projectInfo = {
   communitii: {
     info: 'social media app focused on community engagement',
-    stack: 'REACT MONGO FIREBASE',
+    stack: 'REACT MONGO FIREBASE AWS',
     link: 'https://www.youtube.com/watch?v=BChyIZcNoKw'
   },
   inkgen: {
@@ -52,7 +52,7 @@ const projectInfo = {
   },
   jupiterFalls: {
     info: 'educational math game built for web and mobile platforms',
-    stack: 'REACT-NATIVE ADOBE-CS',
+    stack: 'REACT-NATIVE AWS ADOBE-CS',
     link: 'https://jupiterfalls.earthpunk.art'
   },
   'ink.vessels': {
