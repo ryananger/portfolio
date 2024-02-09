@@ -20,7 +20,7 @@ const App = function() {
   var pages = {
     info: <Info/>,
     projects: <Projects/>,
-    contact: 'WORK IN PRoGRESS'
+    contact: <div style={{padding: '1vh'}}>it's all a WORK IN PRoGRESS</div>
   };
 
   var renderMenu = function() {

@@ -5,6 +5,8 @@ import {helpers} from 'util';
 import Project from './Project.jsx';
 
 const Projects = function() {
+  const [project, setProject] = st.newState('project', useState(null));
+
   var renderProjects = function(mod) {
     var rendered = [];
     var i = 0;
@@ -26,6 +28,8 @@ const Projects = function() {
       </div>
     );
   };
+
+  useEffect(()=>{}, [project]);
 
   return (
     <div className='projects f v'>

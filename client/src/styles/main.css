@@ -207,6 +207,7 @@
 .projectCard {
   height: 100%;
   flex: none;
+  transition: height 0.5s, opacity 0.25s;
 }
 
 .projectCard {
@@ -234,6 +235,8 @@
 
 .projectInfo {
   width: 100%;
+  height: 100%;
+  justify-content: space-between;
 }
 
 .projectText {
@@ -241,9 +244,11 @@
 }
 
 .openButton {
-  position: absolute;
-  bottom: 42px;
+  margin-bottom: 1vh;
   font-size: 14px;
+  transition: transform 0.25s, opacity 1s;
+  transition-delay: 0s, 0.5s;
+  transition-property: transform, opacity;
 }
 
 .badges {
