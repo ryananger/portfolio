@@ -46,7 +46,7 @@ const Info = function() {
           {renderBars()}
         </div>
       </div>
-      <small id='asimov'>
+      <small className='asimov'>
         The true delight is in the finding out rather than in the knowing.<br/>
         <small>Isaac Asimov, ad.1988</small>
       </small>

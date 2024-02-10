@@ -7,6 +7,7 @@ import {ax, helpers} from 'util';
 import Page from './Page.jsx';
 import Info from './Info.jsx';
 import Projects from './Projects.jsx';
+import Contact from './Contact.jsx';
 import Stars from './Stars.jsx';
 import Circle from './Circle.jsx';
 import MenuCircle from './MenuCircle.jsx';
@@ -20,7 +21,7 @@ const App = function() {
   var pages = {
     info: <Info/>,
     projects: <Projects/>,
-    contact: <div style={{padding: '1vh'}}>it's all a WORK IN PRoGRESS</div>
+    contact: <Contact/>
   };
 
   var renderMenu = function() {

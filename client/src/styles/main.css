@@ -25,7 +25,7 @@
 .menuTip {
   position: fixed;
   color: #ffc486;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   text-align: end;
   padding: 0 6px;
@@ -53,7 +53,7 @@
 }
 
 #pageContainer, .page {
-  width: 720px;
+  width: 600px;
   height: 360px;
 }
 
@@ -164,14 +164,16 @@
   height: 24px;
 }
 
-#asimov {
+.asimov {
   width: 100%;
+  height: 72px;
   text-align: center;
   padding: 1.5vh;
   box-sizing: border-box;
   border: 1px solid;
   font-weight: 600;
   font-size: 14px;
+  flex: none;
 }
 
 .fallback {
@@ -277,4 +279,32 @@
 .badge {
   flex: auto;
   text-align: center;
+}
+
+.contact {
+  padding: 1vh;
+}
+
+.contactMain {
+  justify-content: flex-start;
+}
+
+.hotkeys {
+  flex: none;
+  height: 72px;
+  align-items: center;
+}
+
+.hotkey {
+  aspect-ratio: 1;
+  width: 32px;
+  border: 1px solid;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin: 1vh 0.25vh;
+}
+
+a {
+  color: var(--bg);
+  text-decoration: none;
 }
