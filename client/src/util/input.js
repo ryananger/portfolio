@@ -45,6 +45,7 @@ window.addEventListener('keyup', function(e) {
       break;
     case 'm':
       st.setShowMenu(!st.showMenu);
+      st.setPage(null);
       break;
     case 'r':
       st.setRotate(!st.rotate);

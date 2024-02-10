@@ -26,11 +26,15 @@
   position: fixed;
   color: #ffc486;
   font-size: 16px;
-  text-align: center;
+  text-align: end;
   background-color: #2017196b;
+  padding: 0 6px;
+  box-sizing: border-box;
   border-radius: 4px;
   width: 80px;
   height: 24px;
+  pointer-events: none;
+  transition: top 0.5s, left 0.5s, opacity 0.25s;
 }
 
 #pageAnchor {
