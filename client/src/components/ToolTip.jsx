@@ -23,32 +23,6 @@ const ToolTip = function({text, index, parentEl}) {
     width: tip.y === pageY ? 80 : 0
   };
 
-  var animate = function() {
-    if (mouse.over && mouse.over.id && mouse.over.id === 'homeCircle') {
-      requestAnimationFrame(animate);
-      return;
-    }
-
-    if (st.page) {
-      requestAnimationFrame(animate);
-      return;
-    }
-
-    if (!mounted && mouse.over === parentEl.current) {
-      var newX = Number(parentEl.current.style.left.replaceAll('px', '')) - 60;
-      var newY = Number(parentEl.current.style.top.replaceAll('px', '')) - 72;
-
-      setTip({x: newX, y: newY});
-      setMounted(true);
-
-    } else if (mouse.over !== parentEl.current) {
-      setTip(center);
-      setMounted(false);
-    }
-
-    requestAnimationFrame(animate);
-  };
-
   var handlePage = function() {
     if (st.page) {
       var el = document.getElementById('pageContainer');
@@ -62,18 +36,33 @@ const ToolTip = function({text, index, parentEl}) {
     setMounted(false);
   };
 
-  useEffect(()=>{
-    frame.current = requestAnimationFrame(animate);
-  }, []);
-
-  useEffect(handlePage, [st.page]);
-  useEffect(()=>{
+  var handleMenu = function() {
     if (!st.showMenu) {
       setMounted(false);
       setTip(center);
-      mouse.over = null;
     }
-  }, [st.showMenu]);
+  };
+
+  useEffect(()=>{
+    window.addEventListener('mousemove', function(e) {
+      if (st.page) {return};
+
+      if (!mounted && e.target === parentEl.current) {
+        var newX = Number(parentEl.current.style.left.replaceAll('px', '')) - 60;
+        var newY = Number(parentEl.current.style.top.replaceAll('px', '')) - 72;
+
+        setTip({x: newX, y: newY});
+        setMounted(true);
+
+      } else if (e.target !== parentEl.current) {
+        setTip(center);
+        setMounted(false);
+      }
+    })
+  }, []);
+
+  useEffect(handlePage, [st.page]);
+  useEffect(handleMenu, [st.showMenu]);
 
   return (
     <div ref={tipEl} className='menuTip' style={style}>{text}</div>
