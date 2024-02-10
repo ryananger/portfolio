@@ -36,7 +36,7 @@
   background-color: #201717be;
   height: 24px;
   pointer-events: none;
-  transition: top 0.5s, left 0.5s, opacity 0.25s, width 0.5s;
+  transition: top 0.25s, left 0.25s, opacity 0.25s, width 0.5s;
 }
 
 #pageAnchor {
