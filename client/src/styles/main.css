@@ -25,16 +25,18 @@
 .menuTip {
   position: fixed;
   color: #ffc486;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 600;
   text-align: end;
-  background-color: #2017196b;
   padding: 0 6px;
   box-sizing: border-box;
   border-radius: 4px;
   width: 80px;
+  min-width: fit-content;
+  background-color: #201717be;
   height: 24px;
   pointer-events: none;
-  transition: top 0.5s, left 0.5s, opacity 0.25s;
+  transition: top 0.5s, left 0.5s, opacity 0.25s, width 0.5s;
 }
 
 #pageAnchor {

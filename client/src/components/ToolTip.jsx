@@ -10,8 +10,18 @@ var last = null;
 
 const ToolTip = function({text, index, parentEl}) {
   const [tip, setTip] = useState(center);
+  const [mounted, setMounted] = useState(false);
   const tipEl = useRef(null);
   const frame = useRef(null);
+
+  const pageY = -12 + (window.innerHeight*0.4) + (window.innerHeight * ((index)*10)/100);
+
+  const style = {
+    top: tip.y,
+    left: tip.x,
+    opacity: tip.x === center.x || !st.showMenu ? 0 : 1,
+    width: tip.y === pageY ? 80 : 0
+  };
 
   var animate = function() {
     if (mouse.over && mouse.over.id && mouse.over.id === 'homeCircle') {
@@ -19,13 +29,21 @@ const ToolTip = function({text, index, parentEl}) {
       return;
     }
 
-    if (!st.page && mouse.over === parentEl.current) {
-      if (Date.now() - last > 1000) {
-        setTip({x: mouse.x - 100, y: mouse.y + 20});
-        last = Date.now();
-      }
-    } else if (!st.page) {
+    if (st.page) {
+      requestAnimationFrame(animate);
+      return;
+    }
+
+    if (!mounted && mouse.over === parentEl.current) {
+      var newX = Number(parentEl.current.style.left.replaceAll('px', '')) - 60;
+      var newY = Number(parentEl.current.style.top.replaceAll('px', '')) - 72;
+
+      setTip({x: newX, y: newY});
+      setMounted(true);
+
+    } else if (mouse.over !== parentEl.current) {
       setTip(center);
+      setMounted(false);
     }
 
     requestAnimationFrame(animate);
@@ -35,12 +53,13 @@ const ToolTip = function({text, index, parentEl}) {
     if (st.page) {
       var el = document.getElementById('pageContainer');
       var rect = el.getBoundingClientRect();
-      var newY = (window.innerHeight*0.4) + (window.innerHeight * ((index)*10)/100);
 
-      setTip({x: rect.left - 174, y: newY - 12});
+      setTip({x: rect.left - 174, y: pageY});
     } else {
       setTip(center);
     }
+
+    setMounted(false);
   };
 
   useEffect(()=>{
@@ -48,9 +67,16 @@ const ToolTip = function({text, index, parentEl}) {
   }, []);
 
   useEffect(handlePage, [st.page]);
+  useEffect(()=>{
+    if (!st.showMenu) {
+      setMounted(false);
+      setTip(center);
+      mouse.over = null;
+    }
+  }, [st.showMenu]);
 
   return (
-    <div ref={tipEl} className='menuTip' style={{top: tip.y, left: tip.x, opacity: tip.x === center.x || !st.showMenu ? 0 : 1}}>{text}</div>
+    <div ref={tipEl} className='menuTip' style={style}>{text}</div>
   );
 };
 
