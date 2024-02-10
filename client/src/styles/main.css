@@ -23,14 +23,14 @@
 }
 
 .menuTip {
-  position: absolute;
-  right: 40px;
-  top: -3px;
-  color: #fdb468;
+  position: fixed;
+  color: #ffc486;
   font-size: 16px;
+  text-align: center;
+  background-color: #2017196b;
+  border-radius: 4px;
   width: 80px;
-  text-align: end;
-  height: 16px;
+  height: 24px;
 }
 
 #pageAnchor {

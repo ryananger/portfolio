@@ -46,6 +46,12 @@ var helpers = {
       }
     }
   },
+  orbit: function(el, vel, pos, dir) {
+    var center = helpers.getCenter(el.current);
+    var dist   = helpers.getDistance(center, pos);
+
+    //new vel is vel*thrust relative to dist
+  },
   getDistance: function(coord1, coord2) {
     const dx = coord2.x - coord1.x;
     const dy = coord2.y - coord1.y;
