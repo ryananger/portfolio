@@ -20,6 +20,7 @@ const App = function() {
   const [showMenu, setShowMenu] = st.newState('showMenu', useState(false));
   const [rotate, setRotate] = st.newState('rotate', useState(false));
   const [page, setPage] = st.newState('page', useState(null));
+  const [hide, setHide] = st.newState('hide', useState(false));
   const center = {x: window.innerWidth/2, y: window.innerHeight/2};
 
   var pages = {

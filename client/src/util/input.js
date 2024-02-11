@@ -50,6 +50,13 @@ window.addEventListener('keyup', function(e) {
   }
 
   switch (e.key) {
+    case 'h':
+      if (!st.hide) {
+        st.setHide(true);
+      } else {
+        st.setHide(false);
+      }
+      break;
     case 'o':
       if (!st.orbiting && st.showMenu && !st.page) {
         st.orbiting = true;
