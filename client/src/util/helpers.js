@@ -23,6 +23,21 @@ var helpers = {
 
     return {x: newX, y: newY};
   },
+  updatePosition: function(vel, pos1, pos2, inc) {
+    // Calculate the angle between A and B
+    const deltaX = pos2.x - pos1.x;
+    const deltaY = pos2.y - pos1.y;
+    const angle  = (Math.atan2(deltaY, deltaX) * (180 / Math.PI)) + (inc || 0);
+
+    // Convert angle to radians
+    const angleRad = (Math.PI / 180) * angle;
+
+    // Calculate new coordinates for body B
+    const newX = pos1.x + vel * Math.cos(angleRad);
+    const newY = pos1.y + vel * Math.sin(angleRad);
+
+    return {x: newX, y: newY};
+  },
   handleWidth: function(el, minW, fullW, range, setWidth) {
     if (!mouse.x && !mouse.y) {
       return;
@@ -45,12 +60,6 @@ var helpers = {
         setWidth(newWidth);
       }
     }
-  },
-  orbit: function(el, vel, pos, dir) {
-    var center = helpers.getCenter(el.current);
-    var dist   = helpers.getDistance(center, pos);
-
-    //new vel is vel*thrust relative to dist
   },
   getDistance: function(coord1, coord2) {
     const dx = coord2.x - coord1.x;

@@ -8,9 +8,13 @@ import Page from './Page.jsx';
 import Info from './Info.jsx';
 import Projects from './Projects.jsx';
 import Contact from './Contact.jsx';
+import Hotkeys from './Hotkeys.jsx';
+import OrbitInfo from './OrbitInfo.jsx'
 import Stars from './Stars.jsx';
 import Circle from './Circle.jsx';
 import MenuCircle from './MenuCircle.jsx';
+
+window.st = st;
 
 const App = function() {
   const [showMenu, setShowMenu] = st.newState('showMenu', useState(false));
@@ -60,7 +64,8 @@ const App = function() {
     <div className='app v'>
       <Stars />
       {renderMenu()}
-
+      <OrbitInfo />
+      <Hotkeys />
       <Circle id='homeCircle' tag='home beat' min={60} max={200}/>
       <Page setShowMenu={setShowMenu} content={pages[page]}/>
     </div>

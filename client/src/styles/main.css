@@ -14,9 +14,11 @@
   cursor: pointer;
   background: var(--grad);
   background-color: var(--color1);
+  opacity: 1;
 }
 
 .menuItem {
+  position: fixed;
   background: var(--grad);
   transition: top 0.25s, left 0.25s, transform 0.25s;
   cursor: pointer;
@@ -289,12 +291,6 @@
   justify-content: flex-start;
 }
 
-.hotkeys {
-  flex: none;
-  height: 72px;
-  align-items: center;
-}
-
 .hotkey {
   aspect-ratio: 1;
   width: 32px;
@@ -302,6 +298,26 @@
   border-radius: 8px;
   box-sizing: border-box;
   margin: 1vh 0.25vh;
+}
+
+.orbitInfo,
+.hotkeys {
+  position: fixed;
+  top: 0;
+  right: 1vh;
+  color: #ffc486b2;
+  align-items: center;
+  transition: opacity 1s;
+  font-size: 14px;
+}
+
+.hotkeys {
+  right: unset;
+  left: 1vh;
+}
+
+.orbitKey {
+  margin: 1vh;
 }
 
 a {

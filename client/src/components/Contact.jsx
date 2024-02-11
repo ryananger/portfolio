@@ -12,7 +12,6 @@ const Info = function() {
         <div className='h' style={{width: '100%'}}><b>GitHub:</b> <a href='https://github.com/ryananger'>github.com/ryananger</a></div>
         <div className='h' style={{width: '100%'}}><b>Resume:</b> <a href='https://docs.google.com/document/d/1IPqpl7-mlfBT8mdvCxSqdyoSIJqduUxeeRUuEle7KH8/edit?usp=sharing'>docs.google.com/doc/d/RA31415</a></div>
       </div>
-      <Hotkeys />
       <div className='asimov v'>
         it's all a WORK IN PRoGRESS
       </div>

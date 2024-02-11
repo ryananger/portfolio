@@ -33,6 +33,15 @@ var throttleKey = function() {
   return chk;
 }
 
+var cancelOrbit = function() {
+  st.inc = 70;
+
+  setTimeout(function() {
+    st.orbiting = false;
+    st.setShowMenu(false);
+  }, 1000);
+};
+
 window.addEventListener('keyup', function(e) {
   if (e.target.type === 'text') {return};
 
@@ -41,10 +50,21 @@ window.addEventListener('keyup', function(e) {
   }
 
   switch (e.key) {
-    case 'f':
+    case 'o':
+      if (!st.orbiting && st.showMenu && !st.page) {
+        st.orbiting = true;
+        st.inc = 91;
+      } else if (st.orbiting) {
+        cancelOrbit();
+      }
       break;
     case 'm':
-      st.setShowMenu(!st.showMenu);
+      if (st.orbiting && st.showMenu) {
+        cancelOrbit();
+      } else {
+        st.setShowMenu(!st.showMenu);
+      }
+
       st.setPage(null);
       break;
     case 'r':
@@ -53,6 +73,8 @@ window.addEventListener('keyup', function(e) {
     case '1':
     case '2':
     case '3':
+      if (st.orbiting) {return};
+
       st.setPage(['info', 'projects', 'contact'][e.key - 1]);
       st.setShowMenu(true);
       break;
