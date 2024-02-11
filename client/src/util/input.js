@@ -23,7 +23,7 @@ var throttleKey = function() {
   var now = Date.now();
   var chk;
 
-  if (throttle && now - throttle < 100) {
+  if (throttle && now - throttle < 150) {
     chk = true;
   } else {
     chk = false;
@@ -41,6 +41,8 @@ var cancelOrbit = function() {
     st.setShowMenu(false);
   }, 1000);
 };
+
+st.cancelOrbit = cancelOrbit;
 
 window.addEventListener('keyup', function(e) {
   if (e.target.type === 'text') {return};

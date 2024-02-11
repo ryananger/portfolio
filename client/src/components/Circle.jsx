@@ -11,6 +11,14 @@ const Circle = function({min, max, range = 400, onClick}) {
   const fullW = max;
   const el = useRef(null);
 
+  var handleClick = function() {
+    if (st.orbiting) {
+      st.cancelOrbit();
+    } else {
+      st.setShowMenu(!st.showMenu);
+    }
+  };
+
   var animate = function() {
     if (st.showMenu) {
       requestAnimationFrame(animate);
@@ -39,7 +47,7 @@ const Circle = function({min, max, range = 400, onClick}) {
   }, [st.showMenu]);
 
   return (
-    <div id='homeCircle' ref={el} className='home beat circle' style={{...style, width: width, margin: `${-width/2}px`}} onClick={()=>{st.setShowMenu(!st.showMenu)}}/>
+    <div id='homeCircle' ref={el} className='home beat circle' style={{...style, width: width, margin: `${-width/2}px`}} onClick={handleClick}/>
   );
 };
 
