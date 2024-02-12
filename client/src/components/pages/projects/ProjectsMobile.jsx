@@ -6,7 +6,7 @@ import Project from './Project.jsx';
 const Projects = function() {
   const [project, setProject] = st.newState('project', useState(null));
 
-  var renderProjects = function(mod) {
+  var renderProjects = function() {
     var rendered = [];
 
     for (var key in projectInfo) {
@@ -22,7 +22,7 @@ const Projects = function() {
     <div className='projects f v'>
       {renderProjects()}
     </div>
-  )
+  );
 };
 
 const projectInfo = {

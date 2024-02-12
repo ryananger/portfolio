@@ -1,7 +1,5 @@
-import React, {useEffect, useState, useRef} from 'react';
-
-import 'styles';
-import {helpers} from 'util';
+import React from 'react';
+import st from 'ryscott-st';
 
 import GrowBar from './GrowBar.jsx';
 
@@ -54,7 +52,7 @@ const Info = function() {
           <small>Isaac Asimov, ad.1988</small>
         </small>
       </div>
-    )
+    );
   }
 
   return (
@@ -83,7 +81,7 @@ const Info = function() {
         <small>Isaac Asimov, ad.1988</small>
       </small>
     </div>
-  )
+  );
 };
 
 export default Info;

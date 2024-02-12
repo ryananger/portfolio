@@ -15,7 +15,7 @@ const GrowBar = function({skill, num, index}) {
     <div className='growBar anchor' style={{width: width}}>
       {skill}
     </div>
-  )
+  );
 };
 
 export default GrowBar;

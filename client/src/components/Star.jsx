@@ -2,7 +2,7 @@ import React, {useEffect, useState, useRef} from 'react';
 
 import 'styles';
 import st from 'ryscott-st';
-import {ax, mouse, helpers} from 'util';
+import {helpers} from 'util';
 
 const Star = function({min = 12, max = 150, range = 300}) {
   const [width, setWidth] = useState(min);
@@ -36,7 +36,7 @@ const Star = function({min = 12, max = 150, range = 300}) {
 
     setStyle(styleRef.current);
 
-    var frame = requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
   };
 
   var moveStar = function() {

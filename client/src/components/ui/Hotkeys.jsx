@@ -1,4 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
+
+import st from 'ryscott-st';
 
 const Hotkeys = function() {
   const style = st.hide ? {opacity: 0} : {opacity: 1};
@@ -6,7 +8,7 @@ const Hotkeys = function() {
   if (st.mobile) {
     var handleClick = function() {
       st.setRotate(!st.rotate);
-    }
+    };
 
     return (
       <div className='rotateButton h' style={style} onClick={handleClick}>rotate</div>
@@ -24,7 +26,7 @@ const Hotkeys = function() {
       <div className='hotkey v'>h</div>
       &nbsp; to interface
     </div>
-  )
+  );
 };
 
 export default Hotkeys;

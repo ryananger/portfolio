@@ -21,8 +21,8 @@ const Project = function({title, project}) {
         style = {borderLeft: '1px solid'};
       }
 
-      rendered.push(<div key={entry} className='badge' style={style}>{entry.replaceAll('-', ' ')}</div>)
-    })
+      rendered.push(<div key={entry} className='badge' style={style}>{entry.replaceAll('-', ' ')}</div>);
+    });
 
     return rendered;
   };
@@ -46,7 +46,7 @@ const Project = function({title, project}) {
         <div className='badges h'>{renderStack()}</div>
       </div>
     </div>
-  )
+  );
 };
 
 export default Project;

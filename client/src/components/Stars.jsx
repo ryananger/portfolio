@@ -1,14 +1,11 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React from 'react';
 
 import 'styles';
-import st from 'ryscott-st';
-import {ax, mouse, helpers} from 'util';
+import {helpers} from 'util';
 
 import Star from './Star.jsx';
 
 const Stars = function() {
-  const [degrees, setDegrees] = useState(0);
-  const [scale, setScale] = useState(1);
   const winX = window.innerWidth;
 
   var renderStars = function() {
@@ -29,7 +26,7 @@ const Stars = function() {
     <div className='stars'>
       {renderStars()}
     </div>
-  )
+  );
 };
 
 export default Stars;

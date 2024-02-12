@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
+import st from 'ryscott-st';
 
 const Debug = function() {
   const [show, setShow] = useState(false);
@@ -10,13 +11,13 @@ const Debug = function() {
 
   return (
     <>
-    <div className='debug h'>
-      {show && debug}
-      <div onClick={()=>{setShow(!show)}}>cursor</div>
-    </div>
+      <div className='debug h'>
+        {show && debug}
+        <div onClick={()=>{setShow(!show)}}>cursor</div>
+      </div>
     </>
 
-  )
+  );
 };
 
 export default Debug;

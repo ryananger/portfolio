@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import st from 'ryscott-st';
 import {helpers} from 'util';
@@ -25,10 +25,10 @@ const Page = function({content}) {
 
     return (
       <>
-      <div className='headLine' style={{left: x1, width: '3px'}}/>
-      <div className='headLine' style={{left: x2, width: '2px'}}/>
+        <div className='headLine' style={{left: x1, width: '3px'}}/>
+        <div className='headLine' style={{left: x2, width: '2px'}}/>
       </>
-    )
+    );
   };
 
   useEffect(()=>{

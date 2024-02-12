@@ -2,7 +2,7 @@ import React, {useEffect, useState, useRef} from 'react';
 
 import 'styles';
 import st from 'ryscott-st';
-import {ax, mouse, helpers} from 'util';
+import {helpers} from 'util';
 
 var colors = ['#ffae97', '#ffcf97', '#97ffce', '#addfd1'];
 
@@ -23,7 +23,6 @@ const Orbit = function({coords, index}) {
   const [style, setStyle] = useState(defaultStyle);
 
   const g = (1 - (Math.random()/5));
-  const start = useRef(coords);
   const pos = useRef(coords);
   const vel = useRef(g * 18);
   const stableDist = st.mobile ? 100 : 250;
@@ -52,7 +51,7 @@ const Orbit = function({coords, index}) {
     } else if (dist > stableDist + (index*iterDist) + 3) {
       newVel *= 0.999;
     } else {
-
+      //nothing
     }
 
     let gravityChange = helpers.updatePosition(g, pos.current, center);

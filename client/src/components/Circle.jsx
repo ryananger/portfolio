@@ -1,10 +1,10 @@
+/* eslint-disable react/prop-types */
 import React, {useEffect, useState, useRef} from 'react';
 
-import 'styles';
 import st from 'ryscott-st';
-import {ax, mouse, helpers} from 'util';
+import {helpers} from 'util';
 
-const Circle = function({min, max, onClick}) {
+const Circle = function({min, max}) {
   const [width, setWidth] = useState(min);
   const [style, setStyle] = useState({width: min});
   const minW = min;
@@ -33,7 +33,7 @@ const Circle = function({min, max, onClick}) {
   };
 
   useEffect(()=>{
-    var frame = requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
   }, []);
 
   useEffect(()=>{

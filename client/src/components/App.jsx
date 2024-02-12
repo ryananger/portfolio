@@ -1,8 +1,8 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import 'styles';
 import st from 'ryscott-st';
-import {ax, helpers} from 'util';
+import {helpers} from 'util';
 
 import Page from './pages/Page.jsx';
 import Info from './pages/info/Info.jsx';
@@ -10,13 +10,11 @@ import Projects from './pages/projects/Projects.jsx';
 import ProjectsMobile from './pages/projects/ProjectsMobile.jsx';
 import Contact from './pages/Contact.jsx';
 import Hotkeys from './ui/Hotkeys.jsx';
-import OrbitInfo from './ui/OrbitInfo.jsx'
+import OrbitInfo from './ui/OrbitInfo.jsx';
 import Debug from './ui/Debug.jsx';
 import Stars from './Stars.jsx';
 import Circle from './Circle.jsx';
 import MenuCircle from './MenuCircle.jsx';
-
-window.st = st;
 
 st.mobile = window.innerWidth < 1100 || window.innerWidth < window.innerHeight;
 

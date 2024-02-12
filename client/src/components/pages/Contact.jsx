@@ -11,10 +11,10 @@ const Contact = function() {
         <div className='h' style={{width: '100%'}}><b>Resume:</b> <a href='https://docs.google.com/document/d/1IPqpl7-mlfBT8mdvCxSqdyoSIJqduUxeeRUuEle7KH8/edit?usp=sharing'>docs.google.com/doc/d/RA31415</a></div>
       </div>
       <div className='asimov v'>
-        it's all a WORK IN PRoGRESS
+        it&apos;s all a WORK IN PRoGRESS
       </div>
     </div>
-  )
+  );
 };
 
 export default Contact;

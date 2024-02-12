@@ -2,7 +2,7 @@ import React, {useEffect, useState, useRef} from 'react';
 
 import 'styles';
 import st from 'ryscott-st';
-import {ax, mouse, helpers} from 'util';
+import {mouse, helpers} from 'util';
 
 import ToolTip from './ui/ToolTip.jsx';
 import Orbit from './Orbit.jsx';
@@ -98,9 +98,9 @@ const MenuCircle = function({show, coords, page, index}) {
 
   return (
     <>
-    {!orbitOn && <div ref={el} className='menuItem circle grow' style={{...style, width: width, margin: `${-width/2}px`}} onClick={()=>{st.setPage(page)}}/>}
-    {orbitOn && <Orbit coords={coords} index={index}/>}
-    {!st.mobile && <ToolTip index={index} text={page} parentEl={el}/>}
+      {!orbitOn && <div ref={el} className='menuItem circle grow' style={{...style, width: width, margin: `${-width/2}px`}} onClick={()=>{st.setPage(page)}}/>}
+      {orbitOn && <Orbit coords={coords} index={index}/>}
+      {!st.mobile && <ToolTip index={index} text={page} parentEl={el}/>}
     </>
   );
 };

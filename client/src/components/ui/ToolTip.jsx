@@ -1,18 +1,13 @@
 import React, {useEffect, useState, useRef} from 'react';
 
-import 'styles';
 import st from 'ryscott-st';
-import {ax, mouse, helpers} from 'util';
 
 const center = {x: -40 + window.innerWidth/2, y: window.innerHeight/2};
-
-var last = null;
 
 const ToolTip = function({text, index, parentEl}) {
   const [tip, setTip] = useState(center);
   const [mounted, setMounted] = useState(false);
   const tipEl = useRef(null);
-  const frame = useRef(null);
 
   const pageY = -12 + (window.innerHeight*0.4) + (window.innerHeight * ((index)*10)/100);
 
@@ -45,7 +40,7 @@ const ToolTip = function({text, index, parentEl}) {
 
   useEffect(()=>{
     window.addEventListener('mousemove', function(e) {
-      if (st.page) {return};
+      if (st.page) {return}
 
       if (!mounted && e.target === parentEl.current) {
         var newX = Number(parentEl.current.style.left.replaceAll('px', '')) - 60;
@@ -58,7 +53,7 @@ const ToolTip = function({text, index, parentEl}) {
         setTip(center);
         setMounted(false);
       }
-    })
+    });
   }, []);
 
   useEffect(handlePage, [st.page]);
