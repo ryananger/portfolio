@@ -9,6 +9,10 @@ var mouse = {
 };
 
 var handleCursor = function(e) {
+  if (st.mobile && !e.touches) {
+    return;
+  }
+
   mouse.x = !st.mobile ? e.clientX : e.touches[0].clientX;
   mouse.y = !st.mobile ? e.clientY : e.touches[0].clientY;
 
@@ -16,7 +20,7 @@ var handleCursor = function(e) {
 
   mouse.over = element ? element : null;
 
-  st.mobile && st.setDebug(`x: ${mouse.x}, y: ${mouse.y}, over: ${element.className || null}`);
+  st.setDebug(`x: ${mouse.x}, y: ${mouse.y}, over: ${element.className || null}`);
 
 };
 
@@ -44,7 +48,7 @@ var cancelOrbit = function() {
 
   setTimeout(function() {
     st.orbiting = false;
-    st.ince = 91;
+    st.inc = 91;
     st.setShowMenu(false);
   }, 1000);
 };
@@ -69,7 +73,6 @@ window.addEventListener('keyup', function(e) {
     case 'o':
       if (!st.orbiting && st.showMenu && !st.page) {
         st.orbiting = true;
-        st.inc = 91;
       } else if (st.orbiting) {
         cancelOrbit();
       }

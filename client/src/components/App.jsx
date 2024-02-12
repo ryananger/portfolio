@@ -7,6 +7,7 @@ import {ax, helpers} from 'util';
 import Page from './Page.jsx';
 import Info from './Info.jsx';
 import Projects from './Projects.jsx';
+import ProjectsMobile from './ProjectsMobile.jsx';
 import Contact from './Contact.jsx';
 import Hotkeys from './Hotkeys.jsx';
 import OrbitInfo from './OrbitInfo.jsx'
@@ -28,7 +29,7 @@ const App = function() {
 
   var pages = {
     info: <Info/>,
-    projects: <Projects/>,
+    projects: st.mobile ? <ProjectsMobile/> : <Projects/>,
     contact: <Contact/>
   };
 
