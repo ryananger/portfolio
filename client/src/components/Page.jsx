@@ -22,7 +22,7 @@ const Page = function({content}) {
   };
 
   var renderHeadLines = function() {
-    const x1 = helpers.rand(200) + 240;
+    const x1 = st.mobile ? helpers.rand(80) + 220 : helpers.rand(200) + 240;
     const x2 = x1 + 4;
 
     return (

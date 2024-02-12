@@ -3,6 +3,16 @@ import React, {useEffect, useState} from 'react';
 const Hotkeys = function() {
   const style = st.hide ? {opacity: 0} : {opacity: 1};
 
+  if (st.mobile) {
+    var handleClick = function() {
+      st.setRotate(!st.rotate);
+    }
+
+    return (
+      <div className='rotateButton h' style={style} onClick={handleClick}>rotate</div>
+    );
+  }
+
   return (
     <div className='hotkeys h' style={style}>
       press &nbsp;

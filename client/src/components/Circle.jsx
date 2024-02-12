@@ -4,11 +4,13 @@ import 'styles';
 import st from 'ryscott-st';
 import {ax, mouse, helpers} from 'util';
 
-const Circle = function({min, max, range = 400, onClick}) {
+const Circle = function({min, max, onClick}) {
   const [width, setWidth] = useState(min);
   const [style, setStyle] = useState({width: min});
   const minW = min;
-  const fullW = max;
+  const fullW = st.mobile ? max*0.6 : max;
+  const range = st.mobile ? 200 : 400;
+
   const el = useRef(null);
 
   var handleClick = function() {

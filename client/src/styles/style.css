@@ -53,9 +53,10 @@
 }
 
 html {
+  overscroll-behavior: contain;
   background: var(--bg);
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -72,6 +73,7 @@ body, #root {
 }
 
 .app {
+  position: fixed;
   width: 1280px;
   height: 100svh;
   max-width: 100svw;

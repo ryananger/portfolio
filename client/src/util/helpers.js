@@ -6,13 +6,14 @@ var helpers = {
     return Math.floor(Math.random() * num);
   },
   getRandomCoordinates: function(distance, origin) {
-    // Generate a random angle in radians
+    // generate a random angle in radians
     const angle = Math.random() * 2 * Math.PI;
 
-    // Calculate the new coordinates
+    // calculate the new coordinates
     var newX = origin.x + distance * Math.cos(angle);
     var newY = origin.y + distance * Math.sin(angle);
 
+    // edge check
     if (newY < 100) {
       newY = 100;
     }
@@ -21,18 +22,26 @@ var helpers = {
       newY = window.innerHeight - 100;
     }
 
+    if (newX < 50) {
+      newX = 50;
+    }
+
+    if (newX > window.innerWidth - 50) {
+      newX = window.innerWidth - 50;
+    }
+
     return {x: newX, y: newY};
   },
   updatePosition: function(vel, pos1, pos2, inc) {
-    // Calculate the angle between A and B
+    // calculate the angle between 1 and 2
     const deltaX = pos2.x - pos1.x;
     const deltaY = pos2.y - pos1.y;
     const angle  = (Math.atan2(deltaY, deltaX) * (180 / Math.PI)) + (inc || 0);
 
-    // Convert angle to radians
+    // convert angle to radians
     const angleRad = (Math.PI / 180) * angle;
 
-    // Calculate new coordinates for body B
+    // calculate new coordinates for 1
     const newX = pos1.x + vel * Math.cos(angleRad);
     const newY = pos1.y + vel * Math.sin(angleRad);
 
@@ -71,12 +80,11 @@ var helpers = {
   },
   getCenter: function(el) {
     if (!el) {return};
-    // Get the bounding client rect of the element
+
     const rect = el.getBoundingClientRect();
 
-    // Calculate the center coordinates
-    const centerX = rect.left + rect.width / 2 + window.scrollX;
-    const centerY = rect.top + rect.height / 2 + window.scrollY;
+    const centerX = rect.left + rect.width/2 + window.scrollX;
+    const centerY = rect.top + rect.height/2 + window.scrollY;
 
     return {x: centerX, y: centerY};
   },

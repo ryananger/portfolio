@@ -8,14 +8,20 @@ var mouse = {
   over: null
 };
 
-window.addEventListener('mousemove', function(e) {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
+var handleCursor = function(e) {
+  mouse.x = !st.mobile ? e.clientX : e.touches[0].clientX;
+  mouse.y = !st.mobile ? e.clientY : e.touches[0].clientY;
 
   var element = document.elementFromPoint(mouse.x, mouse.y);
 
   mouse.over = element ? element : null;
-}, {passive: true});
+
+  st.mobile && st.setDebug(`x: ${mouse.x}, y: ${mouse.y}, over: ${element.className || null}`);
+
+};
+
+window.addEventListener('mousemove', handleCursor, {passive: true});
+window.addEventListener('touchmove', handleCursor, {passive: true});
 
 var throttle;
 
@@ -38,6 +44,7 @@ var cancelOrbit = function() {
 
   setTimeout(function() {
     st.orbiting = false;
+    st.ince = 91;
     st.setShowMenu(false);
   }, 1000);
 };

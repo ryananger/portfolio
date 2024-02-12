@@ -10,11 +10,14 @@ import Projects from './Projects.jsx';
 import Contact from './Contact.jsx';
 import Hotkeys from './Hotkeys.jsx';
 import OrbitInfo from './OrbitInfo.jsx'
+import Debug from './Debug.jsx';
 import Stars from './Stars.jsx';
 import Circle from './Circle.jsx';
 import MenuCircle from './MenuCircle.jsx';
 
 window.st = st;
+
+st.mobile = window.innerWidth < 1100;
 
 const App = function() {
   const [showMenu, setShowMenu] = st.newState('showMenu', useState(false));
@@ -32,9 +35,10 @@ const App = function() {
   var renderMenu = function() {
     var rendered = [];
     var i = 0;
+    var baseDist = st.mobile ? 100 : 250;
 
     for (var key in pages) {
-      let coords = helpers.getRandomCoordinates(250 + (i*50), center);
+      let coords = helpers.getRandomCoordinates(baseDist + (i*50), center);
 
       rendered.push(<MenuCircle key={key} show={showMenu} coords={coords} page={key} index={i}/>);
 
@@ -50,25 +54,16 @@ const App = function() {
     }
   }, [showMenu]);
 
-  if (window.innerWidth < 1100) {
-    return (
-      <div className='app v'>
-        <Stars />
-        <div className='fallback v' onClick={()=>{setPage(page ? page + 1 : 1)}}>
-          BEST EXPERIENCED ON DeSKTOP
-        </div>
-      </div>
-    )
-  }
-
   return (
     <div className='app v'>
       <Stars />
       {renderMenu()}
-      <OrbitInfo />
-      <Hotkeys />
       <Circle id='homeCircle' tag='home beat' min={60} max={200}/>
       <Page setShowMenu={setShowMenu} content={pages[page]}/>
+
+      <OrbitInfo />
+      <Hotkeys />
+      <Debug />
     </div>
   );
 };

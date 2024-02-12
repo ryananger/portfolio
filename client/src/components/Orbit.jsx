@@ -26,6 +26,8 @@ const Orbit = function({coords, index}) {
   const start = useRef(coords);
   const pos = useRef(coords);
   const vel = useRef(g * 18);
+  const stableDist = st.mobile ? 100 : 250;
+  const iterDist = st.mobile ? 50 : 24;
 
   var animate = function() {
     if (st.orbiting) {
@@ -45,9 +47,9 @@ const Orbit = function({coords, index}) {
 
     let newVel = vel.current;
 
-    if (dist < 250 + (index * 50) - 3) {
+    if (dist < stableDist + (index * iterDist) - 3) {
       newVel *= thrust;
-    } else if (dist > 250 + (index*50) + 3) {
+    } else if (dist > stableDist + (index*iterDist) + 3) {
       newVel *= 0.999;
     } else {
 

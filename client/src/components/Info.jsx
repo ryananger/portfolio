@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 
 import 'styles';
 import {helpers} from 'util';
@@ -29,24 +29,56 @@ const Info = function() {
     return rendered;
   };
 
+  if (st.mobile) {
+    return (
+      <div className='info v'>
+        <div className='infoMain anchor v'>
+          <div className='infoPart'>
+            RYAN ANGER, 34<br/>
+            MiCHIGAN, USA, EARTH.4_08<br/>
+            SOFTWARE ENGINEER (MERN)<br/>
+          </div>
+          <div className='infoPart'>
+            <br/>
+            FUTUrIST<br/>
+            MuSICIAN<br/>
+            ILLUsTRATOR<br/>
+            USAF AIR TRAFFIC CONtROLLER<br/>
+          </div>
+        </div>
+        <div className='infoSkills anchor v'>
+          {renderBars()}
+        </div>
+        <small className='asimov v'>
+          The true delight is in the finding out rather than in the knowing.<br/>
+          <small>Isaac Asimov, ad.1988</small>
+        </small>
+      </div>
+    )
+  }
+
   return (
     <div className='info v'>
-      <div className='h f'>
-        <div className='infoMain'>
-          RYAN ANGER, 34<br/>
-          MiCHIGAN, USA, EARTH.4_08<br/>
-          SOFTWARE ENGINEER (MERN)<br/>
-          <br/>
-          FUTUrIST<br/>
-          MuSICIAN<br/>
-          ILLUsTRATOR<br/>
-          USAF AIR TRAFFIC CONtROLLER<br/>
+      <div className='infoContainer h f'>
+        <div className='infoMain anchor v'>
+          <div className='infoPart'>
+            RYAN ANGER, 34<br/>
+            MiCHIGAN, USA, EARTH.4_08<br/>
+            SOFTWARE ENGINEER (MERN)<br/>
+          </div>
+          <div className='infoPart'>
+            <br/>
+            FUTUrIST<br/>
+            MuSICIAN<br/>
+            ILLUsTRATOR<br/>
+            USAF AIR TRAFFIC CONtROLLER<br/>
+          </div>
         </div>
-        <div className='infoSkills v'>
+        <div className='infoSkills anchor v'>
           {renderBars()}
         </div>
       </div>
-      <small className='asimov'>
+      <small className='asimov v'>
         The true delight is in the finding out rather than in the knowing.<br/>
         <small>Isaac Asimov, ad.1988</small>
       </small>
