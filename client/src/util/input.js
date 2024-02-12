@@ -1,6 +1,4 @@
 import st      from 'ryscott-st';
-import ax      from './ax.js';
-import helpers from './helpers.js';
 
 var mouse = {
   x: null,
@@ -41,7 +39,7 @@ var throttleKey = function() {
 
   throttle = Date.now();
   return chk;
-}
+};
 
 var cancelOrbit = function() {
   st.inc = 70;
@@ -58,47 +56,47 @@ var cancelOrbit = function() {
 st.cancelOrbit = cancelOrbit;
 
 window.addEventListener('keyup', function(e) {
-  if (e.target.type === 'text') {return};
+  if (e.target.type === 'text') {return}
 
   if (throttleKey()) {
     return;
   }
 
   switch (e.key) {
-    case 'h':
-      if (!st.hide) {
-        st.setHide(true);
-      } else {
-        st.setHide(false);
-      }
-      break;
-    case 'o':
-      if (!st.orbiting && st.showMenu && !st.page) {
-        st.orbiting = true;
-      } else if (st.orbiting) {
-        cancelOrbit();
-      }
-      break;
-    case 'm':
-      if (st.orbiting && st.showMenu) {
-        cancelOrbit();
-      } else {
-        st.setShowMenu(!st.showMenu);
-      }
+  case 'h':
+    if (!st.hide) {
+      st.setHide(true);
+    } else {
+      st.setHide(false);
+    }
+    break;
+  case 'o':
+    if (!st.orbiting && st.showMenu && !st.page) {
+      st.orbiting = true;
+    } else if (st.orbiting) {
+      cancelOrbit();
+    }
+    break;
+  case 'm':
+    if (st.orbiting && st.showMenu) {
+      cancelOrbit();
+    } else {
+      st.setShowMenu(!st.showMenu);
+    }
 
-      st.setPage(null);
-      break;
-    case 'r':
-      st.setRotate(!st.rotate);
-      break;
-    case '1':
-    case '2':
-    case '3':
-      if (st.orbiting) {return};
+    st.setPage(null);
+    break;
+  case 'r':
+    st.setRotate(!st.rotate);
+    break;
+  case '1':
+  case '2':
+  case '3':
+    if (st.orbiting) {return}
 
-      st.setPage(['info', 'projects', 'contact'][e.key - 1]);
-      st.setShowMenu(true);
-      break;
+    st.setPage(['info', 'projects', 'contact'][e.key - 1]);
+    st.setShowMenu(true);
+    break;
   }
 });
 

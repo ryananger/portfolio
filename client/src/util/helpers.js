@@ -1,5 +1,4 @@
-import st from 'ryscott-st';
-import {ax, mouse} from 'util';
+import {mouse} from 'util';
 
 var helpers = {
   rand: function(num) {
@@ -79,7 +78,7 @@ var helpers = {
     return dist;
   },
   getCenter: function(el) {
-    if (!el) {return};
+    if (!el) {return}
 
     const rect = el.getBoundingClientRect();
 
