@@ -9,9 +9,9 @@ var mouse = {
 };
 
 var handleCursor = function(e) {
-  if (st.mobile && !e.touches) {
-    return;
-  }
+  // if (st.mobile && !e.touches) {
+  //   return;
+  // }
 
   mouse.x = !st.mobile ? e.clientX : e.touches[0].clientX;
   mouse.y = !st.mobile ? e.clientY : e.touches[0].clientY;
@@ -50,6 +50,8 @@ var cancelOrbit = function() {
     st.orbiting = false;
     st.inc = 91;
     st.setShowMenu(false);
+    mouse.x = null;
+    mouse.y = null;
   }, 1000);
 };
 

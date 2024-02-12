@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import st from 'ryscott-st';
 
-import {helpers} from 'util';
 import Project from './Project.jsx';
 
 const Projects = function() {

@@ -1,8 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
-import Hotkeys from './Hotkeys.jsx';
-
-const Info = function() {
+const Contact = function() {
   return (
     <div className='contact f v'>
       <div className='contactMain v f'>
@@ -19,4 +17,4 @@ const Info = function() {
   )
 };
 
-export default Info;
+export default Contact;

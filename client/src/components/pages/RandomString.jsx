@@ -1,9 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react';
 
-
-import 'styles';
-import st from 'ryscott-st';
-import {ax, helpers} from 'util';
+import {helpers} from 'util';
 
 const RandomString = function() {
   const frame = useRef(null);

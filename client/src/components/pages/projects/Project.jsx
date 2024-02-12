@@ -1,8 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react';
 import st from 'ryscott-st';
 
-import {helpers} from 'util';
-
 const Project = function({title, project}) {
   const [show, setShow] = useState(false);
   const titleEl = useRef(null);

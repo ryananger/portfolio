@@ -4,21 +4,21 @@ import 'styles';
 import st from 'ryscott-st';
 import {ax, helpers} from 'util';
 
-import Page from './Page.jsx';
-import Info from './Info.jsx';
-import Projects from './Projects.jsx';
-import ProjectsMobile from './ProjectsMobile.jsx';
-import Contact from './Contact.jsx';
-import Hotkeys from './Hotkeys.jsx';
-import OrbitInfo from './OrbitInfo.jsx'
-import Debug from './Debug.jsx';
+import Page from './pages/Page.jsx';
+import Info from './pages/info/Info.jsx';
+import Projects from './pages/projects/Projects.jsx';
+import ProjectsMobile from './pages/projects/ProjectsMobile.jsx';
+import Contact from './pages/Contact.jsx';
+import Hotkeys from './ui/Hotkeys.jsx';
+import OrbitInfo from './ui/OrbitInfo.jsx'
+import Debug from './ui/Debug.jsx';
 import Stars from './Stars.jsx';
 import Circle from './Circle.jsx';
 import MenuCircle from './MenuCircle.jsx';
 
 window.st = st;
 
-st.mobile = window.innerWidth < 1100;
+st.mobile = window.innerWidth < 1100 || window.innerWidth < window.innerHeight;
 
 const App = function() {
   const [showMenu, setShowMenu] = st.newState('showMenu', useState(false));

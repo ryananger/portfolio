@@ -4,7 +4,7 @@ import 'styles';
 import st from 'ryscott-st';
 import {ax, mouse, helpers} from 'util';
 
-import ToolTip from './ToolTip.jsx';
+import ToolTip from './ui/ToolTip.jsx';
 import Orbit from './Orbit.jsx';
 
 var colors = ['#ffae97', '#ffcf97', '#97ffce', '#addfd1'];
