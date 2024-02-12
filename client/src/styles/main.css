@@ -4,11 +4,11 @@
 }
 
 .stars {
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    user-select: none;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  user-select: none;
 }
 
 .home {

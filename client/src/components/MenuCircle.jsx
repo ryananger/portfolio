@@ -7,7 +7,7 @@ import {mouse, helpers} from 'util';
 import ToolTip from './ui/ToolTip.jsx';
 import Orbit from './Orbit.jsx';
 
-var colors = ['#ffae97', '#ffcf97', '#97ffce', '#addfd1'];
+var colors = ['#ff997d', '#ffcf97', '#97ffce', '#addfd1'];
 
 const MenuCircle = function({show, coords, page, index}) {
   const center = {x: window.innerWidth/2, y: window.innerHeight/2};

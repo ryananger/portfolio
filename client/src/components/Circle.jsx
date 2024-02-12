@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, {useEffect, useState, useRef} from 'react';
 
 import st from 'ryscott-st';
@@ -17,6 +16,7 @@ const Circle = function({min, max}) {
     if (st.orbiting) {
       st.cancelOrbit();
     } else {
+
       st.setShowMenu(!st.showMenu);
     }
   };
@@ -38,8 +38,8 @@ const Circle = function({min, max}) {
 
   useEffect(()=>{
     if (st.showMenu) {
-      setStyle({...style, transition: 'width 0.1s'});
       setWidth(fullW);
+      setStyle({...style, transition: 'width 0.1s'});
     } else {
       setWidth(minW);
       setTimeout(()=>{

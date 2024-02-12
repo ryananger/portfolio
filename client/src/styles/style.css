@@ -219,3 +219,7 @@ input, select {
 ::-webkit-scrollbar-thumb {
   background-color: var(--home);
 }
+
+div {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
