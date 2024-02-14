@@ -9,7 +9,7 @@ var colors = ['#ffae97', '#ffcf97', '#97ffce', '#addfd1'];
 st.inc = 91;
 
 const Orbit = function({coords, index}) {
-  const center = {x: window.innerWidth/2, y: window.innerHeight/2};
+  const center = st.center;
   const frame = useRef(null);
   const defaultStyle = {
     position: 'fixed',

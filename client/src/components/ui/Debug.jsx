@@ -5,7 +5,7 @@ const Debug = function() {
   const [show, setShow] = useState(false);
   const [debug, setDebug] = st.newState('debug', useState('null'));
 
-  if (st.hide) {
+  if (st.hide || st.landscape) {
     return;
   }
 

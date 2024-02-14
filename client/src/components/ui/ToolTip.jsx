@@ -2,9 +2,8 @@ import React, {useEffect, useState, useRef} from 'react';
 
 import st from 'ryscott-st';
 
-const center = {x: -40 + window.innerWidth/2, y: window.innerHeight/2};
-
 const ToolTip = function({text, index, parentEl}) {
+  const center = {x: -40 + window.innerWidth/2, y: window.innerHeight/2};
   const [tip, setTip] = useState(center);
   const [mounted, setMounted] = useState(false);
   const tipEl = useRef(null);

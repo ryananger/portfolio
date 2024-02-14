@@ -16,13 +16,12 @@ const Circle = function({min, max}) {
     if (st.orbiting) {
       st.cancelOrbit();
     } else {
-
       st.setShowMenu(!st.showMenu);
     }
   };
 
   var animate = function() {
-    if (st.showMenu) {
+    if (st.showMenu || st.mobile) {
       requestAnimationFrame(animate);
       return;
     }

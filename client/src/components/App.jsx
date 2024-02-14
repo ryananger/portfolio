@@ -16,7 +16,6 @@ import Stars from './Stars.jsx';
 import Circle from './Circle.jsx';
 import MenuCircle from './MenuCircle.jsx';
 
-st.mobile = window.innerWidth < 1100 || window.innerWidth < window.innerHeight;
 
 const App = function() {
   const [showMenu, setShowMenu] = st.newState('showMenu', useState(false));
@@ -25,9 +24,14 @@ const App = function() {
   const [hide, setHide] = st.newState('hide', useState(false));
   const center = {x: window.innerWidth/2, y: window.innerHeight/2};
 
+  st.mobile = window.innerWidth < 1100;
+  st.landscape = st.mobile && window.innerWidth > window.innerHeight;
+
+  st.center = center;
+
   var pages = {
     info: <Info/>,
-    projects: st.mobile ? <ProjectsMobile/> : <Projects/>,
+    projects: st.mobile && !st.landscape ? <ProjectsMobile/> : <Projects/>,
     contact: <Contact/>
   };
 
@@ -52,6 +56,12 @@ const App = function() {
       setPage(null);
     }
   }, [showMenu]);
+
+  useEffect(()=>{
+    window.addEventListener('resize', function() {
+      setShowMenu(false);
+    })
+  }, []);
 
   return (
     <div className='app v'>

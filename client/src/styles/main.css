@@ -17,6 +17,7 @@
   background-color: var(--color1);
   opacity: 1;
   user-select: none;
+  max-width: 25vh;
 }
 
 .menuItem {
@@ -349,7 +350,7 @@ a {
   text-decoration: none;
 }
 
-@media (max-width: 1100px) {
+@media (orientation: portrait) and (max-width: 1100px) {
   .grow:hover {
     transform: unset;
   }
@@ -458,6 +459,64 @@ a {
   .orbitButton,
   .rotateButton {
     padding: 1vh;
+  }
+
+  .rotateButton {
+    left: 0;
+    right: unset;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1024px) {
+  .page,
+  #pageContainer {
+    max-width: 70svw;
+    max-height: 90svh;
+  }
+
+  .randomString {
+    font-size: 1.6vw;
+  }
+
+  .pageContent {
+    height: calc(100% - 55px + 1vh);
+    font-size: 1.6vw;
+  }
+
+  .infoMain {
+    width: 50%;
+  }
+
+  .growBar {
+    height: unset;
+  }
+
+  .projectCard,
+  .asimov {
+    font-size: 1.6vw;
+  }
+
+  .asimov {
+    flex: auto;
+  }
+
+  .closeIcon {
+    width: 24px;
+    margin-top: 0;
+    aspect-ratio: 2;
+  }
+
+  .closeIcon:hover {
+    width: 24px;
+    margin-top: 0;
+    margin-right: 0px;
+    border-radius: 12px;
+  }
+
+  .rotateButton,
+  .orbitButton,
+  .debug {
+    padding: 1vw;
   }
 
   .rotateButton {

@@ -7,18 +7,14 @@ var mouse = {
 };
 
 var handleCursor = function(e) {
-  // if (st.mobile && !e.touches) {
-  //   return;
-  // }
-
-  mouse.x = !st.mobile ? e.clientX : e.touches[0].clientX;
-  mouse.y = !st.mobile ? e.clientY : e.touches[0].clientY;
+  mouse.x = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+  mouse.y = e.type === 'mousemove' ? e.clientY : e.touches[0].clientY;
 
   var element = document.elementFromPoint(mouse.x, mouse.y);
 
   mouse.over = element ? element : null;
 
-  st.setDebug(`x: ${mouse.x}, y: ${mouse.y}, over: ${element.className || null}`);
+  st.debug && st.setDebug(`x: ${mouse.x}, y: ${mouse.y}, over: ${element.className || null}`);
 
 };
 

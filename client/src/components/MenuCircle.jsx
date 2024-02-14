@@ -10,7 +10,7 @@ import Orbit from './Orbit.jsx';
 var colors = ['#ff997d', '#ffcf97', '#97ffce', '#addfd1'];
 
 const MenuCircle = function({show, coords, page, index}) {
-  const center = {x: window.innerWidth/2, y: window.innerHeight/2};
+  const center = st.center;
   const el    = useRef(null);
   const frame = useRef(null);
   const defaultStyle = {
@@ -60,7 +60,7 @@ const MenuCircle = function({show, coords, page, index}) {
       var pageEl = document.getElementById('pageContainer');
       var rect = pageEl.getBoundingClientRect();
 
-      if (!st.mobile) {
+      if (!st.mobile || st.landscape) {
         var newY = (window.innerHeight*0.4) + (window.innerHeight * ((index)*10)/100);
         var transition = 'top 0.25s, left 0.25s, transform 0.25s';
 
@@ -89,6 +89,10 @@ const MenuCircle = function({show, coords, page, index}) {
 
   useEffect(()=>{
     frame.current = requestAnimationFrame(animate);
+
+    window.addEventListener('resize', function() {
+      setStyle({...style, left: window.innerWidth/2, top: window.innerHeight/2});
+    });
   }, []);
 
   useEffect(mount, [show]);

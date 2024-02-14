@@ -27,7 +27,7 @@ const Info = function() {
     return rendered;
   };
 
-  if (st.mobile) {
+  if (st.mobile && !st.landscape) {
     return (
       <div className='info v'>
         <div className='infoMain anchor v'>
